@@ -1,0 +1,72 @@
+const characterTypes = [
+    'Bowerman', 
+    'Swordsman', 
+    'Magician', 
+    'Daemon', 
+    'Undead', 
+    'Zombie'
+]
+
+
+class Chacter {
+    constructor(name, type, health = 100, level = 1, attack, defence) {
+        if (name.length < 2 || name.length >10 || !(characterTypes.includes(type))) {
+            throw new Error('Параметры героя не корректны');
+        }
+        this.name = name;
+        this.type = type;
+        this.health = health;
+        this.level = level;
+        this.attack = attack;
+        this.defence = defence;
+    }
+}
+
+class Bowerman extends Chacter{
+    constructor(name) {
+        super(name, 'Bowerman', 100, 1, 25, 25);
+    }
+}
+
+class Swordsman extends Chacter{
+    constructor(name) {
+        super(name, 'Swordsman', 100, 1, 40, 10);
+    }
+}
+
+class Magician extends Chacter{
+    constructor(name) {
+        super(name, 'Magician', 100, 1, 10, 40);
+    }
+}
+
+class Daemon extends Chacter{
+    constructor(name) {
+        super(name, 'Daemon', 100, 1, 10, 40);
+    }
+}
+
+class Undead extends Chacter{
+    constructor(name) {
+        super(name, 'Undead', 100, 1, 25, 25);
+    }
+}
+
+class Zombie extends Chacter{
+    constructor(name) {
+        super(name, 'Zombie', 100, 1, 40, 10);
+    }
+}
+
+
+const bowerman = new Bowerman ('bowerman');
+const swordsman = new Swordsman ('swordsman');
+const magician = new Magician ('magician');
+const daemon = new Daemon ('daemon');
+const undead = new Undead ('undead');
+const zombie = new Zombie ('zombie');
+
+
+
+
+
