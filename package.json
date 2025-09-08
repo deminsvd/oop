@@ -1,8 +1,7 @@
 {
   "name": "ajs",
   "version": "1.0.0",
-  "type": "module",
-  "description": "",
+   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --mode development",
