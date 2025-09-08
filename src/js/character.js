@@ -8,8 +8,8 @@ const characterTypes = [
 ]
 
 
-class Chacter {
-    constructor(name, type, health = 100, level = 1, attack, defence) {
+export class Character {
+    constructor(name, type, health, level, attack, defence) {
         if (name.length < 2 || name.length >10 || !(characterTypes.includes(type))) {
             throw new Error('Параметры героя не корректны');
         }
@@ -22,37 +22,38 @@ class Chacter {
     }
 }
 
-class Bowerman extends Chacter{
+
+export class Bowerman extends Character{
     constructor(name) {
         super(name, 'Bowerman', 100, 1, 25, 25);
     }
 }
 
-class Swordsman extends Chacter{
+export class Swordsman extends Character{
     constructor(name) {
         super(name, 'Swordsman', 100, 1, 40, 10);
     }
 }
 
-class Magician extends Chacter{
+class Magician extends Character{
     constructor(name) {
         super(name, 'Magician', 100, 1, 10, 40);
     }
 }
 
-class Daemon extends Chacter{
+class Daemon extends Character{
     constructor(name) {
         super(name, 'Daemon', 100, 1, 10, 40);
     }
 }
 
-class Undead extends Chacter{
+class Undead extends Character{
     constructor(name) {
         super(name, 'Undead', 100, 1, 25, 25);
     }
 }
 
-class Zombie extends Chacter{
+class Zombie extends Character{
     constructor(name) {
         super(name, 'Zombie', 100, 1, 40, 10);
     }
